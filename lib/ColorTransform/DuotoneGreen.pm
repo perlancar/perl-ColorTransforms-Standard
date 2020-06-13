@@ -31,7 +31,7 @@ sub transform {
     my %args = @_;
 
     ColorTransform::Weight::transform(
-        $args{color},
+        color => $args{color},
         r1 => 0.4, g1 => 0.3, b1 => 0.2,
         r2 => 0.3, g2 => 0.8, b2 => 0.4,
         r3 => 0.3, g3 => 0.5, b3 => 0.1,
