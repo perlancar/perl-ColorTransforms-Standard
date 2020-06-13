@@ -1,4 +1,4 @@
-package ColorTransform::Darken;
+package ColorTransform::Lighten;
 
 # AUTHORITY
 # DATE
@@ -15,10 +15,10 @@ our %SPEC;
 
 $SPEC{transform} = {
     v => 1.1,
-    summary => 'Darken color',
+    summary => 'Lighten color',
     description => <<'_',
 
-Darkening is done by mixing the input color with black (000000).
+Lightening is done by mixing the input color with white (ffffff).
 
 _
     args => {
@@ -35,19 +35,19 @@ _
     result_naked => 1,
     examples => [
         {
-            args => {color=>'ff0000'},
-            result  => '7f0000',
+            args => {color=>'800000'},
+            result  => 'bf7f7f',
         },
         {
-            args => {color=>'ff0000', percent=>75},
-            result  => '3f0000',
+            args => {color=>'800000', percent=>75},
+            result  => 'dfbfbf',
         },
     ],
 };
 sub transform {
     my %args = @_;
 
-    mix_2_rgb_colors($args{color}, '000000', ($args{percent} // 50)/100);
+    mix_2_rgb_colors($args{color}, 'ffffff', ($args{percent} // 50)/100);
 }
 
 1;
